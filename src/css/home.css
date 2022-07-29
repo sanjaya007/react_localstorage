@@ -1,0 +1,197 @@
+.home-container {
+  width: 100%;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.movie-container {
+  width: 100%;
+}
+
+.movie-container .no-data {
+  height: 200px;
+}
+
+.movie-container .no-data h1 {
+  color: #ffffff;
+}
+
+.movie-card {
+  max-width: 500px;
+  min-width: 500px;
+  width: 500px;
+  margin: 30px auto;
+  background-color: #000000;
+  transition: all 0.3s ease;
+}
+
+.movie-card .img-box {
+  width: 100%;
+  height: 500px;
+}
+
+.movie-card .img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movie-card .info-box {
+  padding: 20px 20px;
+}
+
+.movie-card .title {
+  margin-bottom: 10px;
+}
+
+.movie-card .title h1 {
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.movie-card .title p {
+  color: #959595;
+  font-size: 12px;
+}
+
+.movie-card .summary {
+  margin-bottom: 20px;
+}
+
+.movie-card .summary h1 {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.movie-card .summary p {
+  color: #959595;
+  font-size: 12px;
+}
+
+.movie-card .watch-btn button {
+  background-color: #e67e22;
+  width: 100%;
+}
+
+.form-container {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #242424;
+  border-radius: 6px;
+  min-width: 300px;
+  margin-left: 10px !important;
+}
+
+.form-container .input-box {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.form-container .input-box label {
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.form-container .input-box input {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 10px;
+  background-color: transparent;
+  border: 1px solid #484848;
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.form-container .input-box textarea {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 10px;
+  background-color: transparent;
+  border: 1px solid #484848;
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.form-container button {
+  width: 100%;
+  background-color: #2980b9;
+}
+
+@media (max-width: 1023px) {
+  .home-container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .form-container {
+    min-width: 280px;
+  }
+}
+
+@media (max-width: 900px) {
+  .movie-card {
+    max-width: 400px;
+    min-width: 400px;
+    width: 400px;
+  }
+  .movie-card .img-box {
+    height: 400px;
+  }
+}
+
+@media (max-width: 800px) {
+  .movie-card {
+    max-width: 390px;
+    min-width: 390px;
+    width: 390px;
+  }
+  .movie-card .img-box {
+    height: 390px;
+  }
+  .form-container {
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 767px) {
+  .home-container {
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-direction: column-reverse;
+  }
+  .form-container {
+    width: 100%;
+    margin-left: 0 !important;
+  }
+  .movie-card {
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
+  }
+  .movie-card .img-box {
+    height: 700px;
+  }
+}
+
+@media (max-width: 600px) {
+  .movie-card .img-box {
+    height: 600px;
+  }
+}
+
+@media (max-width: 500px) {
+  .movie-card .img-box {
+    height: 500px;
+  }
+}
+
+@media (max-width: 400px) {
+  .movie-card .img-box {
+    height: 400px;
+  }
+}
