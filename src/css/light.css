@@ -70,3 +70,37 @@
 .light-body .form-container .input-box input {
   color: #000000;
 }
+
+.light-body .form-container .input-box textarea {
+  color: #000000;
+}
+
+.light-body .movie-container .no-data h1 {
+  color: #000000;
+}
+
+.light-body .mobile-nav {
+  background-color: #f1f1f1;
+}
+
+.light-body .mobile-nav .link-box a {
+  color: #000000;
+}
+
+.light-body .mobile-nav .close-icon svg {
+  color: #000000;
+}
+
+.main-container.light-body {
+  background-color: #f1f1f1;
+}
+
+.temp-text {
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.light-body .temp-text {
+  color: #000000;
+}

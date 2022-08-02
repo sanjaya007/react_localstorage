@@ -44,6 +44,18 @@ const NavBar = ({ theme, setTheme }) => {
           <Link to={"/"}>Home</Link>
           <Link to={"/about"}>About</Link>
           <Link to={"/contact"}>Contact</Link>
+          <MaterialUISwitch
+            theme={theme}
+            onChange={() => {
+              if (theme === "light") {
+                localStorage.setItem("mytheme", "dark");
+                setTheme("dark");
+              } else {
+                localStorage.setItem("mytheme", "light");
+                setTheme("light");
+              }
+            }}
+          />
         </div>
         <div className="close-icon" onClick={() => setToggle(false)}>
           <CloseIcon />
