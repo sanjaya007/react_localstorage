@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logoImg from "../assets/images/logo.png";
 import CloseIcon from "@mui/icons-material/Close";
+import MaterialUISwitch from "./Switch";
 
-const NavBar = () => {
+const NavBar = ({ theme, setTheme }) => {
   const [toggle, setToggle] = useState(false);
 
   return (
@@ -16,6 +17,18 @@ const NavBar = () => {
           <Link to={"/"}>Home</Link>
           <Link to={"/about"}>About</Link>
           <Link to={"/contact"}>Contact</Link>
+          <MaterialUISwitch
+            theme={theme}
+            onChange={() => {
+              if (theme === "light") {
+                localStorage.setItem("mytheme", "dark");
+                setTheme("dark");
+              } else {
+                localStorage.setItem("mytheme", "light");
+                setTheme("light");
+              }
+            }}
+          />
         </div>
         <div className="tab-box" onClick={() => setToggle(true)}>
           <span></span>

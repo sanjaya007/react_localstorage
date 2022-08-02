@@ -1,0 +1,72 @@
+.light-body .nav-box {
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.light-body .nav-box .link-box a {
+  color: #000000;
+}
+
+.light-body .nav-box .tab-box span {
+  background-color: #000000;
+}
+
+.light-body .home-container {
+  background-color: #f1f1f1;
+}
+
+.light-body .movie-card {
+  background-color: #ffffff;
+}
+
+.light-body .movie-card .img-box .img-wrapper {
+  box-shadow: none;
+}
+
+.light-body .movie-card:hover .img-box .img-wrapper .icon-container .icon {
+  background-color: #ffffff;
+}
+
+.light-body .movie-card:hover .img-box .img-wrapper .icon-container .icon svg {
+  color: #000000;
+}
+
+.light-body .movie-card .title h1 {
+  color: #000000;
+}
+
+.light-body .movie-card .summary h1 {
+  color: #000000;
+}
+
+.light-body
+  .movie-card:hover
+  .img-box
+  .img-wrapper
+  .icon-container
+  .icon.edit-icon:hover
+  svg {
+  color: #ffffff;
+}
+
+.light-body
+  .movie-card:hover
+  .img-box
+  .img-wrapper
+  .icon-container
+  .icon.delete-icon:hover
+  svg {
+  color: #ffffff;
+}
+
+.light-body .form-container {
+  background-color: #f7f7f7;
+}
+
+.light-body .form-container .input-box label {
+  color: #000000;
+}
+
+.light-body .form-container .input-box input {
+  color: #000000;
+}

@@ -1,6 +1,8 @@
 .nav-box {
+  background-color: #161616;
   padding: 20px 100px;
   border-bottom: 1px solid #242424;
+  transition: all 0.3s ease;
 }
 
 .nav-box .logo-box img {
@@ -11,7 +13,7 @@
   color: #ffffff;
   text-decoration: none;
   font-size: 14px;
-  margin-left: 20px;
+  margin: 0 20px;
 }
 
 .nav-box .tab-box {

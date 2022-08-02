@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "../css/home.css";
+import "../css/light.css";
 import MovieCard from "./MovieCard";
 import Form from "./Form";
+import Yframe from "./Yframe";
 
 const getMoviesData = () => {
   const data = localStorage.getItem("moviesData");
@@ -13,15 +15,12 @@ const getMoviesData = () => {
 };
 
 const Home = () => {
-  const [inputData, setInputData] = useState({
-    title: "",
-    year: "",
-    duration: "",
-    genre: "",
-    file: "",
-    summary: "",
-  });
   const [moviesData, setMoviesData] = useState(getMoviesData());
+  const [currentId, setCurrentId] = useState(null);
+  const [frame, setFrame] = useState({
+    frame: false,
+    url: null,
+  });
 
   useEffect(() => {
     localStorage.setItem("moviesData", JSON.stringify(moviesData));
@@ -36,15 +35,25 @@ const Home = () => {
           </div>
         )}
         {moviesData.map((value, index) => {
-          return <MovieCard value={value} key={index} />;
+          return (
+            <MovieCard
+              value={value}
+              key={index}
+              moviesData={moviesData}
+              setMoviesData={setMoviesData}
+              setCurrentId={setCurrentId}
+              setFrame={setFrame}
+            />
+          );
         })}
       </div>
       <Form
         moviesData={moviesData}
         setMoviesData={setMoviesData}
-        inputData={inputData}
-        setInputData={setInputData}
+        currentId={currentId}
+        setCurrentId={setCurrentId}
       />
+      <Yframe frame={frame} setFrame={setFrame} />
     </div>
   );
 };

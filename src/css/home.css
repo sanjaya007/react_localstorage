@@ -2,6 +2,9 @@
   width: 100%;
   padding-left: 100px;
   padding-right: 100px;
+  background-color: #161616;
+  min-height: 100vh;
+  transition: all 0.3s ease;
 }
 
 .movie-container {
@@ -28,6 +31,59 @@
 .movie-card .img-box {
   width: 100%;
   height: 500px;
+  position: relative;
+}
+
+.movie-card .img-box .img-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 100px;
+  transition: all 0.5s ease;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.movie-card:hover .img-box .img-wrapper {
+  opacity: 1;
+}
+
+.movie-card:hover .img-box .img-wrapper .icon-container {
+  padding: 10px;
+}
+
+.movie-card:hover .img-box .img-wrapper .icon-container .icon {
+  background-color: #000000;
+  padding: 4px;
+  opacity: 0.5;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.movie-card:hover .img-box .img-wrapper .icon-container .icon.edit-icon {
+  margin-right: 6px;
+}
+
+.movie-card:hover .img-box .img-wrapper .icon-container .icon svg {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.movie-card:hover .img-box .img-wrapper .icon-container .icon.edit-icon:hover {
+  opacity: 1;
+  background-color: #2980b9;
+}
+
+.movie-card:hover
+  .img-box
+  .img-wrapper
+  .icon-container
+  .icon.delete-icon:hover {
+  opacity: 1;
+  background-color: #c0392b;
 }
 
 .movie-card .img-box img {
@@ -75,18 +131,81 @@
   width: 100%;
 }
 
+.movie-card .watch-btn a {
+  background-color: #e67e22;
+  width: 100%;
+}
+
 .form-container {
   margin-top: 30px;
   padding: 20px;
   background-color: #242424;
   border-radius: 6px;
   min-width: 300px;
-  margin-left: 10px !important;
+  margin-left: 10px;
+  position: sticky;
+  top: 20px;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.form-container .note p {
+  color: #959595;
+  font-size: 10px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-container .note p.error {
+  color: #c0392b;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  animation: text_blink 0.1s ease;
+}
+
+/* yframe  */
+.yframe {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  padding: 100px;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999999999;
+  display: none;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.yframe.active {
+  display: flex;
+  opacity: 1;
+}
+
+.yframe .box {
+  background-color: #000000;
+}
+
+@keyframes text_blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.form-container .note p:nth-child(1) {
+  margin-bottom: 2px !important;
 }
 
 .form-container .input-box {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 .form-container .input-box label {
@@ -120,7 +239,25 @@
 
 .form-container button {
   width: 100%;
+}
+
+.form-container button.update-btn {
+  background-color: #34495e;
+}
+
+.form-container button.submit-btn {
   background-color: #2980b9;
+}
+
+@media (max-width: 1400px) {
+  .movie-card {
+    max-width: 450px;
+    min-width: 450px;
+    width: 450px;
+  }
+  .movie-card .img-box {
+    height: 450px;
+  }
 }
 
 @media (max-width: 1023px) {
@@ -128,12 +265,6 @@
     padding-left: 50px;
     padding-right: 50px;
   }
-  .form-container {
-    min-width: 280px;
-  }
-}
-
-@media (max-width: 900px) {
   .movie-card {
     max-width: 400px;
     min-width: 400px;
@@ -142,16 +273,39 @@
   .movie-card .img-box {
     height: 400px;
   }
+  .form-container {
+    min-width: 280px;
+  }
+  .yframe {
+    padding: 50px;
+  }
+  .yframe .box {
+    width: 100%;
+  }
+  .yframe .box iframe {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .movie-card {
+    max-width: 370px;
+    min-width: 370px;
+    width: 370px;
+  }
+  .movie-card .img-box {
+    height: 370px;
+  }
 }
 
 @media (max-width: 800px) {
   .movie-card {
-    max-width: 390px;
-    min-width: 390px;
-    width: 390px;
+    max-width: 350px;
+    min-width: 350px;
+    width: 350px;
   }
   .movie-card .img-box {
-    height: 390px;
+    height: 350px;
   }
   .form-container {
     min-width: 250px;
@@ -166,7 +320,8 @@
   }
   .form-container {
     width: 100%;
-    margin-left: 0 !important;
+    margin-left: 0;
+    position: unset;
   }
   .movie-card {
     max-width: 100%;
@@ -175,6 +330,9 @@
   }
   .movie-card .img-box {
     height: 700px;
+  }
+  .yframe {
+    padding: 20px;
   }
 }
 
@@ -188,10 +346,16 @@
   .movie-card .img-box {
     height: 500px;
   }
+  .yframe .box iframe {
+    height: 450px;
+  }
 }
 
 @media (max-width: 400px) {
   .movie-card .img-box {
+    height: 400px;
+  }
+  .yframe .box iframe {
     height: 400px;
   }
 }
