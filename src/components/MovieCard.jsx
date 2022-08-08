@@ -76,7 +76,11 @@ const MovieCard = ({
         <div className="title">
           <h1>{value.title}</h1>
           <p>
-            {value.year} | {value.duration} | {value.genre}
+            {value.year}
+            {value.year === "" ? "" : value.duration === "" ? "" : " | "}
+            {value.duration}
+            {value.genre === "" ? "" : " | "}
+            {value.genre}
           </p>
         </div>
         <div className="summary">

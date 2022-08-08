@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logoImg from "../assets/images/logo.png";
 import CloseIcon from "@mui/icons-material/Close";
 import MaterialUISwitch from "./Switch";
@@ -10,13 +10,30 @@ const NavBar = ({ theme, setTheme }) => {
   return (
     <>
       <div className="nav-box flex-css-row-sb">
-        <div className="logo-box">
-          <img src={logoImg} alt="" />
-        </div>
+        <NavLink to={"/"}>
+          <div className="logo-box">
+            <img src={logoImg} alt="" />
+          </div>
+        </NavLink>
         <div className="link-box flex-css-row-start">
-          <Link to={"/"}>Home</Link>
-          <Link to={"/about"}>About</Link>
-          <Link to={"/contact"}>Contact</Link>
+          <NavLink
+            to={"/"}
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to={"/movies"}
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+          >
+            Movies
+          </NavLink>
+          <NavLink
+            to={"/contact"}
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+          >
+            Contact
+          </NavLink>
           <MaterialUISwitch
             theme={theme}
             onChange={() => {
@@ -41,9 +58,27 @@ const NavBar = ({ theme, setTheme }) => {
         }
       >
         <div className="link-box flex-css-column">
-          <Link to={"/"}>Home</Link>
-          <Link to={"/about"}>About</Link>
-          <Link to={"/contact"}>Contact</Link>
+          <NavLink
+            to={"/"}
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+            onClick={() => setToggle(false)}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to={"/movies"}
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+            onClick={() => setToggle(false)}
+          >
+            Movies
+          </NavLink>
+          <NavLink
+            to={"/contact"}
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+            onClick={() => setToggle(false)}
+          >
+            Contact
+          </NavLink>
           <MaterialUISwitch
             theme={theme}
             onChange={() => {

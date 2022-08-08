@@ -99,8 +99,45 @@
   color: white;
   text-align: center;
   padding-top: 20px;
+  font-size: 20px;
 }
 
 .light-body .temp-text {
+  color: #000000;
+}
+
+.light-body .movie-list-container .head-title h1 {
+  color: #000000;
+}
+
+.light-body .movie-list-container .search-box input {
+  color: #000000;
+}
+
+.light-body .movie-list-container .loading-box p {
+  color: #000000;
+}
+
+.light-body .view-box {
+  background-color: #ffffff;
+}
+
+.light-body .view-box .right-box h1 {
+  color: #000000;
+}
+
+.light-body .view-box .right-box p {
+  color: #666666;
+}
+
+.light-body .movie-list-container .list-container .list-box .info h1 {
+  color: #000000;
+}
+
+.light-body .movie-list-container .list-container .list-box:hover .info h1 {
+  color: #d35400;
+}
+
+.light-body .view-loading-box h1 {
   color: #000000;
 }
